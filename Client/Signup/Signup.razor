@@ -1,0 +1,25 @@
+﻿@page "/signup"
+
+<EditForm Model="@signupModel" OnValidSubmit="@SubmitReg">
+    <DataAnnotationsValidator />
+    
+    <div class="form-group">
+        <label for="UserName">User Name</label>
+        <InputText @bind-Value=signupModel.UserName class="form-control" id="UserName" />
+        <ValidationMessage For="() => signupModel.UserName" />
+    </div>
+    <div class="form-group">
+        <label for="Email">Email Address</label>
+        <InputText @bind-Value=signupModel.Email class="form-control" id="Email" />
+        <ValidationMessage For="() => signupModel.Email" />
+    </div>
+    <div class="form-group">
+        <label for="Password">Password</label>
+        <InputText type="password" @bind-Value=signupModel.Password class="form-control" id="Password" />
+        <ValidationMessage For="() => signupModel.Password" />
+        
+    </div>
+
+    <input type="submit" class="btn btn-primary text-sm-center" value="Save"  />
+</EditForm>
+
